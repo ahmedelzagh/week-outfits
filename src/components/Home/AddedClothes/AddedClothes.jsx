@@ -12,15 +12,15 @@ const AddedClothes = () => {
       <div className={classes.addedClothes}>
         <div className={classes.classContainer}>
           <h3>Tops</h3>
-          <ul className={classes.item}>{clothes.tops.length > 0 ? clothes.tops.map((top, i) => <ClothesCard key={i} info={top} />) : <p>Nothing to Show</p>}</ul>
+          <ul className={classes.item}>{clothes.tops.length > 0 ? clothes.tops.map((top) => <ClothesCard key={top.id} info={top} />) : <p>Nothing to Show</p>}</ul>
         </div>
         <div className={classes.classContainer}>
           <h3>Pants</h3>
-          <ul className={classes.item}>{clothes.pants.length > 0 ? clothes.pants.map((pant, i) => <ClothesCard key={i} info={pant} />) : <p>Nothing to Show</p>}</ul>
+          <ul className={classes.item}>{clothes.pants.length > 0 ? clothes.pants.map((pant) => <ClothesCard key={pant.id} info={pant} />) : <p>Nothing to Show</p>}</ul>
         </div>
         <div className={classes.classContainer}>
           <h3>Shoes</h3>
-          <ul className={classes.item}>{clothes.shoes.length > 0 ? clothes.shoes.map((shoe, i) => <ClothesCard key={i} info={shoe} />) : <p>Nothing to Show</p>}</ul>
+          <ul className={classes.item}>{clothes.shoes.length > 0 ? clothes.shoes.map((shoe) => <ClothesCard key={shoe.id} info={shoe} />) : <p>Nothing to Show</p>}</ul>
         </div>
       </div>
       <Button variant="dark">Generate Outfits</Button>

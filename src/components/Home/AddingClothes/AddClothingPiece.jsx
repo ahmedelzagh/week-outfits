@@ -1,18 +1,29 @@
 import React from "react";
+import { v4 } from "uuid";
+
 import Button from "../../UI/Button";
 import Card from "../../UI/Card";
+import { useInput, useClothes } from "../../../hooks";
 
 import classes from "./AddClothingPiece.module.css";
 
-import { useInput, useClothes } from "../../../hooks";
-
 const AddClothingPiece = () => {
   const { addClothes } = useClothes();
-  const [itemType, resetItemType] = useInput("");
-  const [color, resetColor] = useInput("#000000");
+  const [itemTypeProps, typeValidation, resetItemType] = useInput("", (value) => value.trim() !== "");
+  const [colorProps, colorValidation, resetColor] = useInput("#000000", (value) => value.trim() !== "");
+  // const [secColorProps, secColorValidation, resetSecColor] = useInput("#000000");
+
+  let formIsValid = false;
+  if (typeValidation.valueIsValid && colorValidation.valueIsValid) {
+    formIsValid = true;
+  }
+
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    addClothes(itemType.value, color.value);
+    if (!formIsValid) {
+      return;
+    }
+    addClothes(v4(), itemTypeProps.value, colorProps.value);
     resetItemType();
     resetColor();
   };
@@ -22,7 +33,7 @@ const AddClothingPiece = () => {
       <form onSubmit={formSubmitHandler}>
         <p>
           <label htmlFor="types">What is the classification of this piece of clothing?</label>
-          <select id="types" {...itemType}>
+          <select id="types" {...itemTypeProps}>
             <option value="" disabled>
               ---
             </option>
@@ -33,9 +44,9 @@ const AddClothingPiece = () => {
         </p>
         <p>
           <label htmlFor="colors">What color is it?</label>
-          <input type="color" id="colors" {...color} />
+          <input type="color" id="colors" {...colorProps} />
         </p>
-        <Button type="submit" variant="dark">
+        <Button disabled={!formIsValid} type="submit" variant="dark">
           Add
         </Button>
       </form>

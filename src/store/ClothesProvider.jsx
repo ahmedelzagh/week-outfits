@@ -2,11 +2,11 @@ import { useReducer } from "react";
 import ClothesContext from "./clothes-context";
 import clothesReducer from "../reducers/clothes-reducer";
 
-const ClothesProvider = ( {children} ) => {
+const ClothesProvider = ({ children }) => {
   const [clothesState, dispatchClothes] = useReducer(clothesReducer, { tops: [], pants: [], shoes: [] });
 
-  const addClothesHandler = (itemType, color) => {
-    dispatchClothes({ type: "ADD_CLOTHES", item: { itemType, color } });
+  const addClothesHandler = (id, itemType, color) => {
+    dispatchClothes({ type: "ADD_CLOTHES", item: { id, itemType, color } });
   };
 
   const value = {
