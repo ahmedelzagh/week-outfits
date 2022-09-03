@@ -1,0 +1,41 @@
+.header {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--light-accent);
+  color: var(--dark-shades);
+  padding: 0.25rem 3rem;
+  margin-bottom: 2rem;
+}
+
+.header h2 {
+  font-size: 1.5rem;
+  background-color: var(--dark-shades);
+  padding: 0.5rem;
+  border-radius: 12px;
+  font-family: var(--logo-font);
+  color: var(--light-shades);
+}
+
+.header ul {
+  list-style: none;
+  display: flex;
+}
+
+.header ul li {
+  font-size: 1.2em;
+  border-radius: 10px;
+  padding: 0.4rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+.header ul li:hover {
+  background-color: var(--dark-shades);
+  color: var(--light-shades);
+  padding: 0.4rem;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}

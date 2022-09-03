@@ -1,0 +1,25 @@
+.addedClothesCard {
+  max-width: 800px;
+  margin: auto;
+}
+.addedClothes {
+  max-width: 800px;
+  margin: auto;
+  display: grid;
+  color: var(--dark-shades);
+  padding-bottom: 3rem;
+}
+
+.classContainer {
+    border-bottom: 3px solid var(--dark-shades);
+}
+.classContainer:last-of-type {
+    border-bottom: none;
+}
+
+.item{
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  list-style: none;
+}

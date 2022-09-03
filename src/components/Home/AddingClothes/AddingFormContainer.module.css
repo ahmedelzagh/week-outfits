@@ -1,0 +1,39 @@
+.addingForm {
+  display: grid;
+  margin: auto;
+  row-gap: 0.5rem;
+}
+
+.addingForm button {
+  display: block;
+  margin: auto;
+}
+.addingForm span {
+  margin: auto;
+  width: fit-content;
+  border: 2px solid var(--light-accent);
+  border-radius: 5px;
+  color: var(--light-shades);
+  padding: 0.3rem;
+  font-weight: bold;
+}
+.addingForm span strong{
+  color: var(--light-accent);
+}
+
+.addingForm p {
+  border-bottom: 3px solid var(--light-shades);
+  padding-bottom: 0.5rem;
+}
+
+.addingForm p label {
+  font-weight: bold;
+}
+
+.addingForm p input {
+  margin: auto;
+  display: block;
+  cursor: pointer;
+  width: 90px;
+  text-align: center;
+}

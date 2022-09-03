@@ -1,0 +1,11 @@
+.card {
+  padding: 1rem;
+  box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 14px;
+  background-color: var(--light-shades);
+}
+
+.card .dark {
+  color: var(--light-shades);
+  background-color: var(--dark-shades);
+}
